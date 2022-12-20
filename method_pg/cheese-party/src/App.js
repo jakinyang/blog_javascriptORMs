@@ -1,28 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import getApplicationData from './hooks/getApplicationData';
+import CheeseTable from './components/CheeseTable';
 
 function App() {
+  const { state, getIngredientsForCheeses, getCategoriesForCheeses } = getApplicationData();
 
-  const [state, setState] = useState('');
-  useEffect(() => {
-    axios.get('/')
-      .then((res) => {
-        console.log("Response data: ", res.data);
-        setState(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }, [])
+  const ingredients = getIngredientsForCheeses(state);
+  const categories = getCategoriesForCheeses(state);
 
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          {state}
-        </p>
+        <h1>Cheeses!</h1>
+        <CheeseTable 
+        cheeses={state.cheeses}
+        ingredients={ingredients}
+        categories={categories}
+        />
       </header>
     </div>
   );
