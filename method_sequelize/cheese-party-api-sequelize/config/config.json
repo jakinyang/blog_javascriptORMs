@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "cheesepartyhost",
+    "password": "cheeseforever",
+    "database": "cheeseparty_sequelize",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port": "5432"
+  }
+}
