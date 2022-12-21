@@ -29,8 +29,8 @@ export default function getApplicationData() {
 
   const getIngredientsForCheeses = (state) => {
     const cheeseIngredients = {};
-    state.cheeses.forEach(cheese => {
-      const ingredientArr = state.ingredients.filter(row => row.cheese_id === cheese.id);
+    state.ingredients.forEach(cheese => {
+      const ingredientArr = cheese.Ingredients.map(ingredient => ingredient.name);
       cheeseIngredients[cheese.id] = ingredientArr;
     })
     return cheeseIngredients;
@@ -38,8 +38,8 @@ export default function getApplicationData() {
 
   const getCategoriesForCheeses = (state) => {
     const cheeseCategories = {};
-    state.cheeses.forEach(cheese => {
-      const categoriesArr = state.categories.filter(row => row.cheese_id === cheese.id);
+    state.categories.forEach(cheese => {
+      const categoriesArr = cheese.Categories.map(category => category.name);
       cheeseCategories[cheese.id] = categoriesArr;
     })
     return cheeseCategories;

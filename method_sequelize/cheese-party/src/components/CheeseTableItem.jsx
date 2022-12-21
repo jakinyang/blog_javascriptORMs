@@ -2,20 +2,20 @@ import React from "react";
 export default function CheeseTableItem(props) {
 
   const formatIngredients = (props) => {
-    const ingredientsList = props.ingredients.map(obj => {
+    const ingredientsList = props.ingredients.map(ingredient => {
       return(
         <li>
-          {obj.ingredient}
+          {ingredient}
         </li>
       )
     })
     return ingredientsList;
   }
   const formatCategories = (props) => {
-    const categoriesList = props.categories.map(obj => {
+    const categoriesList = props.categories.map(category => {
       return(
         <li>
-          {obj.category}
+          {category}
         </li>
       )
     })
@@ -25,10 +25,10 @@ export default function CheeseTableItem(props) {
 
   return (
     <tr>
-      <td class="tg-0lax">{props.name}</td>
-      <td class="tg-0lax">{props.origin}</td>
-      <td class="tg-0lax"><ul>{formatCategories(props)}</ul></td>
-      <td class="tg-0lax"><ul>{formatIngredients(props)}</ul></td>
+      <td className="tg-0lax">{props.name}</td>
+      <td className="tg-0lax">{props.origin}</td>
+      <td className="tg-0lax"><ul>{formatCategories(props)}</ul></td>
+      <td className="tg-0lax"><ul>{formatIngredients(props)}</ul></td>
     </tr>
   )
 }

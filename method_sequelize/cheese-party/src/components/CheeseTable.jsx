@@ -20,13 +20,13 @@ export default function CheeseTable(props) {
 
   const cheeseTableItemsArray = makeTableRowArray(props);
   return (
-    <table class="tg">
+    <table className="tg">
       <thead>
         <tr>
-          <th class="tg-0lax">Name</th>
-          <th class="tg-0lax">Origin</th>
-          <th class="tg-0lax">Category</th>
-          <th class="tg-0lax">Ingredients</th>
+          <th className="tg-0lax">Name</th>
+          <th className="tg-0lax">Origin</th>
+          <th className="tg-0lax">Category</th>
+          <th className="tg-0lax">Ingredients</th>
         </tr>
       </thead>
       <tbody>
